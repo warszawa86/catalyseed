@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database - Ethenolysis</title>
+    <style>
+        /* Resetting some default styles */
+        body, h1, table, th, td {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        /* Styling the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            white-space: nowrap;  /* Avoid wrapping */
+            overflow: hidden;     /* Hide overflow content */
+            text-overflow: ellipsis; /* Add ellipsis if the content overflows */
+        }
+
+        th {
+            background-color: #1a73e8;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        /* Zebra striping for rows */
+        tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover td {
+            background-color: #e3f2fd;
+            cursor: pointer;
+        }
+
+        /* Responsiveness for mobile screens */
+        @media screen and (max-width: 768px) {
+            table {
+                font-size: 12px;
+                padding: 10px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Database of Ethenolysis of Seed Oils</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Entry</th>
+                <th>Reaction</th>
+                <th>Substrate 1</th>
+                <th>Substrate 2</th>
+                <th>Product 1</th>
+                <th>Product 2</th>
+                <th>Conv. (%)</th>
+                <th>Yield (%)</th>
+                <th>Sel. (%)</th>
+                <th>TON</th>
+                <th>TOF (1/h)</th>
+                <th>T (°C)</th>
+                <th>t (h)</th>
+                <th>Medium</th>
+                <th>[Cat.] (ppm)</th>
+                <th>Catalyst</th>
+                <th>L(-x)</th>
+                <th>L(+x)</th>
+                <th>L(-y)</th>
+                <th>L(+y)</th>
+                <th>L(-z)</th>
+                <th>L(+z)</th>
+                <th>Label in (ref.)</th>
+            </tr>
+        </thead>
+		<tbody>
+			{% for row in data %}
+			<tr>
+				<td>{{ row[0] if row[0] else '' }}</td>
+				<td>{{ row[1] if row[1] else '' }}</td>
+				<td>{{ row[2] if row[2] else '' }}</td>
+				<td>{{ row[3] if row[3] else '' }}</td>
+				<td>{{ row[4] if row[4] else '' }}</td>
+				<td>{{ row[5] if row[5] else '' }}</td>
+				<td>{{ row[6] if row[6] else '' }}</td>
+				<td>{{ row[7] if row[7] else '' }}</td>
+				<td>{{ row[8] if row[8] else '' }}</td>
+				<td>{{ row[9] if row[9] else '' }}</td>
+				<td>{{ row[10] if row[10] else '' }}</td>
+				<td>{{ row[11] if row[11] else '' }}</td>
+				<td>{{ row[12] if row[12] else '' }}</td>
+				<td>{{ row[13] if row[13] else '' }}</td>
+				<td>{{ row[14] if row[14] else '' }}</td>
+				<td>{{ row[15] if row[15] else '' }}</td>
+				<td>{{ row[16] if row[16] else '' }}</td>
+				<td>{{ row[17] if row[17] else '' }}</td>
+				<td>{{ row[18] if row[18] else '' }}</td>
+				<td>{{ row[19] if row[19] else '' }}</td>
+				<td>{{ row[20] if row[20] else '' }}</td>
+				<td>{{ row[21] if row[21] else '' }}</td>
+				<td>{{ row[22] if row[22] else '' }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+    </table>
+</body>
+</html>
